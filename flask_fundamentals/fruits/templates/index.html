@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruits</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div class="d-flex flex-column mx-auto w-50 border border-dark">
+
+        
+        <h1 class="m-2">Dojo Fruit Store</h1>
+        <h3 class="m-2">What would you like to buy?</h3>
+        <form action="/checkout" method="post">
+
+            <table class="m-3">
+                <thead>
+                    <tr>
+                        <th>Fruit Name</th>
+                        <th>Quantity</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Strawberry</td>
+                        <td>
+                            <input type="number" name="strawberry"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Raspberry</td>
+                        <td>
+                            <input type="number" name="raspberry"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Apple</td>
+                        <td>
+                            <input type="number" name="apple"/>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button class="m-3">Buy me stuff</button>
+        </form>
+    </div>
+</body>
+</html>

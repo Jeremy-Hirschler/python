@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div class="d-flex flex-column mx-auto w-50 border border-dark">
+        <h1 class="m-2">Thanks for your order!</h1>
+        <h3 class="m-2">We ordered {{total}} items for you.</h3>
+
+        <h3 class="m-2">Your Order:</h3>
+        <table class="m-3">
+            <thead>
+                <tr>
+                    <th>Fruit Name</th>
+                    <th>Quantity</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Strawberry</td>
+                    <td>{{straw}}</td>
+                </tr>
+                <tr>
+                    <td>Raspberry</td>
+                    <td>{{rasp}}</td>
+                </tr>
+                <tr>
+                    <td>Apple</td>
+                    <td>{{apple}}</td>
+                </tr>
+                
+            </tbody>
+        </table>
+        <a href="/">Go back</a>
+    </div>
+</body>
+</html>
