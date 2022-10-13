@@ -7,11 +7,14 @@
     <title>New Game</title>
 </head>
 <body>
-    <h3>Your card is: <span id="card">{{card}}</span></h3>
-    <h3>Your total is: </h3>
-    <button onclick='hit()'>hit</button>
+    <h3>Your card is: {{session['card']}}</h3>
+    <h3>Your total is: {{session['sum']}}</h3>
     
+    <form action="/add_card" method="post">
+        <input type="submit" name="play" value="hit"/>
+        <input type="submit" name="play" value="stop"/>
+    </form>
     <a href='/'>go bk</a>
-    <script type='text/javascript' src="{{url_for('static',filename='js/script.js')}}"></script>
+
 </body>
 </html>
