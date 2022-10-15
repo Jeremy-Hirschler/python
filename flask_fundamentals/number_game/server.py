@@ -11,11 +11,11 @@ def index():
     
     if 'new' not in session:
         session['new'] = random.randrange(0,101)
-    print(session['new'])
-    if 'guess' in session:
-        session.pop('guess')
+    
     if 'tell' not in session:
         session['tell'] = ''
+    print('new',session['new'])
+    
     return render_template('index.html')
 
 @app.route('/guess', methods=['POST'])
@@ -27,8 +27,15 @@ def guess():
     elif session['guess'] > session['new']:
         session['tell'] = 'Too high!'
     else:
+        
         session['tell'] = f"{session['guess']} was the number!"
-        session.pop('new')
+        
+        
+    return redirect('/')
+
+@app.route('/again', methods=['POST'])
+def replay():
+    session.clear()
     return redirect('/')
 
 if __name__ == '__main__':

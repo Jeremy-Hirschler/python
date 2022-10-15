@@ -12,13 +12,16 @@
     <h3>I am thinking of a number between 1-100</h3>
     <p>Take a guess</p>
     <p>{{session['tell']}}</p>
-
+    {%if session['guess'] != session['new']: %}
     <form action="/guess" method="post">
-        
             <input type="text" name="number"/>
             <button>Submit</button>
-        
-
     </form>
+
+    {%else: %}
+    <form action="/again" method="post">
+        <input type="submit" name="replay" value='Play Again?'/>
+    </form>
+    {%endif%}
 </body>
 </html>
