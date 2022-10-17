@@ -25,20 +25,32 @@ def gold():
     if request.form['find_gold'] == 'farm':
         session['location'] = 'farm'
         session['money'] = random.randrange(10,21)
+        session['event'] = 'good'
     elif request.form['find_gold'] == 'cave':
         session['location'] = 'cave'
         session['money'] = random.randrange(5,11)
+        session['event'] = 'good'
     elif request.form['find_gold'] == 'house':
         session['location'] = 'house'
         session['money'] = random.randrange(2,6)
+        session['event'] = 'good'
     else:
         session['location'] = 'casino'
         session['money'] = random.randrange(0,51)
+        event = random.randrange(0,2)
+        if event == 0:
+            session['event'] = 'bad'
+        else:
+            session['event'] = 'good'
 
-    session['total_gold'] += session['money']
     
     #after find gold, create a new message
-    session['message'] = f'<div><p class="text-success">Earned {session["money"]} gold at the {session["location"]}</p></div>'
+    if session['event'] == 'good':
+        session['message'] = f'<div><p class="text-success">Earned {session["money"]} gold at the {session["location"]}</p></div>'
+        session['total_gold'] += session['money']
+    else:
+        session['message'] = f'<div><p class="text-danger">Lost {session["money"]} gold at the {session["location"]}. Ouch!</p></div>'
+        session['total_gold'] -= session['money']
 
     return redirect('/')
 
