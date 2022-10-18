@@ -9,7 +9,14 @@
 </head>
 <body>
     
+    {% with messages = get_flashed_messages() %}
+        {% for message in messages: %}
+            <div class="mx-auto w-50">
 
+                <p class="mx-auto w-50">{{message}}</p>
+            </div>
+        {%endfor%}
+    {%endwith%}
     <form action="/users" method="post" class="d-flex flex-column w-75 mx-auto">
         <div class="mx-auto">
             <label>Your Name:</label>
