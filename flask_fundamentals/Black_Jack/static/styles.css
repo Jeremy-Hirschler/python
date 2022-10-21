@@ -8,3 +8,11 @@ a:hover {
     text-decoration: none;
     color: red
 }
+
+span {
+    font-weight: bold;
+}
+
+.game {
+    background-color: lightpink;
+}

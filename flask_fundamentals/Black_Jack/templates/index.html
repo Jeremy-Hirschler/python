@@ -9,19 +9,33 @@
     <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}"/>
 </head>
 <body>
-    <div class="border border-dark d-flex flex-column w-75 mx-auto my-2">
+    <div class="game border border-dark d-flex flex-column w-50 mx-auto my-2">
         <div class=" text d-flex flex-column mx-auto">
 
             <h2>BlackJack</h2>
-            <p>Your card is: {{session['card']}}</p>
-            <p>Your total is: {{session['total']}}</p>
-            {%if 'message' in session: %}
-            <p>{{session['message']}}</p>
-            {%endif%}
+            <div class="player_status d-flex">
+                <div class="mr-4">
+
+                    <p><span>Your card is: </span>{{session['player_card']}}</p>
+                    <p><span>Your total is: </span>{{session['total']}}</p>
+                    {%if 'message' in session: %}
+                        <p>{{session['message']}}</p>
+                    {%endif%}
+                </div>
+                <div>
+
+                    <p><span>Dealer's card is: </span>{{session['dealer_card']}}</p>
+                    <p><span>Dealer's total is: </span>{{session['dealer_total']}}</p>
+                    {%if 'dealer_status' in session: %}
+                        <p>{{session['dealer_status']}}</p>
+                    {%endif%}
+                </div>
+            </div>
+
         </div>
         <div class="forms d-flex flex-column mx-auto">
 
-            {%if session['message'] == 'Bust :(': %}
+            {%if session['message'] == 'Bust! You lost, sorry :(' or session['action'] == 'Stop': %}
             <form action="/new_game" method="post">
                 <button class="btn btn-info">Play Again?</button>
             </form>
