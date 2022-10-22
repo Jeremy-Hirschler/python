@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friends</title>
+</head>
+<body>
+    <h2>These are all my friends</h2>
+    {%for friend in friends: %}
+        <p>{{friend.first_name}} {{friend.last_name}} - {{friend.occupation}}</p>
+    
+    {%endfor%}
+    <h2>Add Friend</h2>
+    <form action="/create_friend" method="post">
+        <label>First Name:</label>
+        <input type="text" name="first_name"/>
+        <label>Last Name:</label>
+        <input type="text" name="last_name"/>
+        <label>Occupation:</label>
+        <input type="text" name="occupation"/>
+        <button>Add</button>
+    </form>
+</body>
+</html>
