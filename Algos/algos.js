@@ -31,7 +31,7 @@ function sticks(arr){
             console.log('count',count)
             console.log('arr end',arr)
         }
-        //comment
+        //unccoment
     return answer
 }
 
