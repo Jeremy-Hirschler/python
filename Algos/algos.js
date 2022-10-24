@@ -35,4 +35,6 @@ function sticks(arr){
     return answer
 }
 
-console.log('ans',sticks([1,2,3]))//3,2,1
+// console.log('ans',sticks([1,2,3]))//3,2,1
+//
+
