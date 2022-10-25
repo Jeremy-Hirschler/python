@@ -12,13 +12,24 @@
         
         
         <h2>Emails</h2>
+        {% with messages = get_flashed_messages() %}
+            {%for message in messages: %}
+                <p>{{message}}</p>
+            {%endfor%}
+        {%endwith%}
         <form action="add_email" method="post">
             <label>Email:</label>
             <input type="text" name="email"/>
             <button>Submit</button>
         </form>
         {%for email in emails: %}
-            <p>{{email.email_address}}</p>
+        <div class="d-flex">
+            <p>{{email.id}}</p>
+            <p class="mx-4">{{email.email_address}}</p>
+            <form action="/delete/{{email.id}}" method="get">
+                <button>Delete</button>
+            </form>
+        </div>
         {%endfor%}
     </div>
 </body>
