@@ -37,4 +37,53 @@ function sticks(arr){
 
 // console.log('ans',sticks([1,2,3]))//3,2,1
 //
+function nest(n){
+    // const map = new Map()
+    // let count = 0
+    
+    // for (let i=0; i<n; i++){
+    //     if (!map.get(i)){
+    //         map.set(i)
+    //     }
+    // }
+    // console.log(map)
+    return count
+}
+
+// console.log(nest(9))
+
+function squares(n){
+    let count = 1
+    let sum = 0
+    let list = [n]
+
+    while (2 < 3){
+
+        //split n into its individual digits
+        let split_digits = String(n).split('')
+        console.log('split',split_digits)
+        //loop thru digit array  and square each value 
+        for (let i=0; i<split_digits.length; i++){
+            sum += split_digits[i]**2
+        }
+        //add sum to the list array outside of this loop
+        count++
+        console.log('count',count)
+        
+        console.log(list)
+        //if this sum is equal to any value in the array, return count
+        for (let j=0; j<list.length; j++){
+            if (list[j] == sum){
+                return count
+            }
+        }
+        //re-initialize variables for next time thru while loop
+        list.push(sum)
+        n = sum
+        sum = 0
+        
+    }
+}
+
+// console.log(squares(16))
 
