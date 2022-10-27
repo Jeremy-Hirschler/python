@@ -87,3 +87,94 @@ function squares(n){
 
 // console.log(squares(16))
 
+function substring(s){
+    let substring = ''
+    let arr = []
+    let map = new Map()
+    for (let i=0; i<s.length; i++){
+        if (s[i] !== s[i-1] && !map.get(s[i])){
+            substring += s[i]
+            map.set(s[i], 1)
+            console.log('map',map)
+            arr.push(substring)
+        }else if (map.get(s[i])){
+            // arr.push(substring)
+            substring = s[i-1]
+            map.delete(s[i])
+            i--
+            console.log('second',substring)
+        }else{
+            console.log('third')
+            substring = s[i]
+        }
+    }
+
+    if (arr.length > 0){
+
+        let max = arr[0]
+        
+        for (let i=0; i<arr.length; i++){
+            if (arr[i].length > max.length){
+                max = arr[i]
+            }
+            console.log('subs',substring, arr)
+            console.log(max)
+        }
+        return max.length
+    }
+    console.log(substring, arr)
+    return 0
+}
+
+// console.log(substring('pwwkew'))
+
+
+
+function sub(str){
+    //create new substring
+    //check if letter already exists within substring
+    //add to the substring for each letter
+    //if it does, hold onto substring
+    //repeat until reach end of string
+    //find longest substring
+    
+    let substring = ''
+    let arr = []
+    let map = new Map()
+    for (let i=0; i<str.length; i++){
+        if (!map.has(str[i])){
+            
+            map.set(str[i], i)
+            substring += str[i]
+            arr.push(substring)
+            console.log('y')
+            console.log('array', arr)
+        }else{
+            substring = ''
+
+            i = map.get(str[i])
+            console.log('i',i)
+            map.clear()
+            console.log('n')
+            
+        }
+        
+    }
+    if (arr.length > 0){
+
+        var max = arr[0].length
+    
+        for (let i=0; i<arr.length; i++){
+            if (arr[i].length > max){
+                max = arr[i].length
+            }
+        }
+    }
+
+    console.log(map)
+    return max
+}
+console.log('FINAL_______',sub('abcabcbb'))
+console.log('FINAL_______',sub('pwwkew'))
+console.log('FINAL_______',sub('dvdf'))
+
