@@ -135,8 +135,8 @@ function sub(str){
     //check if letter already exists within substring
     //add to the substring for each letter
     //if it does, hold onto substring
-    //repeat until reach end of string
-    //find longest substring
+
+    
     
     let substring = ''
     let arr = []
@@ -174,7 +174,35 @@ function sub(str){
     console.log(map)
     return max
 }
-console.log('FINAL_______',sub('abcabcbb'))
-console.log('FINAL_______',sub('pwwkew'))
-console.log('FINAL_______',sub('dvdf'))
+// console.log('FINAL_______',sub('abcabcbb'))
+// console.log('FINAL_______',sub('pwwkew'))
+// console.log('FINAL_______',sub('dvdf'))
+
+// class Node {
+//     constructor(value){
+//         this.data = value
+//         this.next = null
+//     }
+// }
+
+// class SLL {
+//     constructor(){
+//         this.head = null
+//     }
+//     addFront(val){
+//         let newNode = new Node(val)
+
+//         if (!this.head){
+//             this.head = newNode
+//             return this
+//         }
+
+//         newNode.next = this.head
+//         this.head = newNode
+//         return this
+//     }
+// }
+
+// let x = new SLL()
+// console.log(x.addFront(8).addFront(10).addFront(2))
 
