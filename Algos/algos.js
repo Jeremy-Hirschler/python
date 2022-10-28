@@ -206,3 +206,42 @@ function sub(str){
 // let x = new SLL()
 // console.log(x.addFront(8).addFront(10).addFront(2))
 
+class Node {
+    constructor(value){
+        this.data = value
+        this.next = null
+    }
+}
+
+class SLL {
+    constructor(){
+        this.head = null
+    }
+
+    addFront(val){
+        let newNode = new Node(val)
+        if (!this.head){
+            this.head = newNode
+            return this
+        }
+
+        newNode.next = this.head
+        this.head = newNode
+        return this
+    }
+
+    size(){
+        let runner = this.head
+        let count = 0
+        while (runner !== null){
+            count ++
+            runner = runner.next
+        }
+        return count
+    }
+}
+
+let p = new SLL()
+
+console.log(p.addFront(3).addFront(4).addFront(18))
+console.log(p.size())
