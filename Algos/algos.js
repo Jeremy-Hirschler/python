@@ -321,5 +321,5 @@ class SLL{
 }
 
 let z = new SLL()
-console.log(z.addFront(3).addFront(45).addFront(14))
-console.log(z.size())
+// console.log(z.addFront(3).addFront(45).addFront(14))
+// console.log(z.size())
