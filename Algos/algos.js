@@ -285,6 +285,45 @@ function sub(str){
 // console.log(z.addFront(3).addFront(4).addFront(191))
 // console.log(z.size())
 
+// class Node{
+//     constructor(value){
+//         this.data = value
+//         this.next = null
+//     }
+// }
+
+// class SLL{
+//     constructor(){
+//         this.head = null
+//     }
+
+//     addFront(val){
+//         let newNode = new Node(val)
+//         if(!this.head){
+//             this.head = newNode
+//             return this
+//         }
+
+//         newNode.next = this.head
+//         this.head = newNode
+//         return this
+//     }
+
+//     size(){
+//         let count = 0
+//         let runner = this.head
+//         while (runner !== null){
+//             count++
+//             runner = runner.next
+//         }
+//         return count
+//     }
+// }
+
+// let z = new SLL()
+// console.log(z.addFront(3).addFront(45).addFront(14))
+// console.log(z.size())
+
 class Node{
     constructor(value){
         this.data = value
@@ -296,19 +335,16 @@ class SLL{
     constructor(){
         this.head = null
     }
-
     addFront(val){
         let newNode = new Node(val)
-        if(!this.head){
+        if (!this.head){
             this.head = newNode
             return this
         }
-
         newNode.next = this.head
         this.head = newNode
         return this
     }
-
     size(){
         let count = 0
         let runner = this.head
@@ -320,6 +356,6 @@ class SLL{
     }
 }
 
-let z = new SLL()
-// console.log(z.addFront(3).addFront(45).addFront(14))
-// console.log(z.size())
+let s = new SLL()
+console.log(s.addFront(3).addFront(9))
+console.log(s.size())
