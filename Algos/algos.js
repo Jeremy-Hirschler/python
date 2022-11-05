@@ -356,6 +356,71 @@ class SLL{
     }
 }
 
-let s = new SLL()
-console.log(s.addFront(3).addFront(9))
-console.log(s.size())
+// let s = new SLL()
+// console.log(s.addFront(3).addFront(9))
+// console.log(s.size())
+
+// function solution(l, r) {
+//     let count = 0
+    
+//     var map = new Map()
+//     //find sum of current index
+//     for (let i=l; i<=r; i++){
+//         var sum = 0
+//         var arr = String(i).split('')
+        
+//         for (let j=0; j<arr.length; j++){
+//             sum += Number(arr[j])
+//         }
+//         //have sum here, find which numbers are comfortable with index i
+//         let comfy = []
+//         for (let k=i-sum; k<=i+sum; k++){
+//             comfy.push(k)
+//         }
+//         map.set(i, comfy)
+//         //evaluate i and arrays
+        
+//         // console.log(comfy)
+//     }
+    
+
+
+//     console.log(map)
+//     return count
+// }
+
+// console.log(solution(10, 12))
+
+function loop(n){
+    let k=1
+    let product = 1
+    while (product < n){
+        product *= k
+        k++
+    }
+    return product
+}
+
+
+
+// console.log(loop(17))
+
+function countSum(n,l,r){
+    //use hashmap to get sum needed
+    let map = new Map()
+    let count = 0
+    for (let index=l; index<=r; index++){
+        //check the value at the index if it adds to current index
+        if (!map.has(index)){
+            map.set(index, n-index)
+        }
+        if (map.has(map.get(index))){
+            count ++
+        }
+
+    }
+    
+    return count
+}
+
+console.log(countSum(6,2,4))
