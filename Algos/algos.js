@@ -452,12 +452,15 @@ function countSum(n,l,r){
 function marble(a,b,n){
     let money = 0
     while (n > 0){
-        money = a*b
-
-        n -= 1
+        money += a*b
+        a++
+        b++
+        n --
     }
-    return 1
+    return money
 }
-//NOT SOLVED
+
 // console.log(marble(1,2,2))
+
+
 
