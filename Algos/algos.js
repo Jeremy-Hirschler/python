@@ -423,5 +423,41 @@ function countSum(n,l,r){
     return count
 }
 
-console.log(countSum(6,2,4))
+// console.log(countSum(6,2,4))
 //comments, more comments to push
+// function stringH(a,b){
+//     let map = new Map()
+//     for (let i=0; i<b.length; i++){
+//         if (!map.get(b[i])){
+//             map.set(b[i], 1)
+//         }else{
+//             map.set(b[i], map.get(b[i]) + 1)
+//         }
+//     }
+//     console.log(map)
+//     for (let i=0; i<b.length; i++){
+//         if (map.get(b[i]))
+//     }
+
+//     return 1
+// }
+
+// console.log(stringH('abc','abccba'))
+
+
+
+
+
+
+function marble(a,b,n){
+    let money = 0
+    while (n > 0){
+        money = a*b
+
+        n -= 1
+    }
+    return 1
+}
+//NOT SOLVED
+// console.log(marble(1,2,2))
+
