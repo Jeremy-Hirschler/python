@@ -111,4 +111,31 @@ function round(n){
     return result
 }
 
-console.log(round(888))
+// console.log(round(888))
+
+function replace(arr, elem, replacer){
+    for (let i=0; i<arr.length; i++){
+        if (arr[i] == elem){
+            arr[i] = replacer
+        }
+    }
+    return arr
+}
+
+// console.log(replace([1,2,1],1,3))
+
+function input(string){
+    //starting point
+    let arr = string.split('')
+    console.log(arr)
+    for (let i=arr.length; i>0 ; i--){
+        arr[i] = arr[i-1]
+    }
+    arr[0] = '('
+    arr.push(')')
+    let result = arr.join('')
+    return result
+}
+
+console.log(input('abacaba'))
+//comment
