@@ -498,6 +498,9 @@ function noCp(a,b){
     return count
 }
 
-console.log(noCp('ab','abcbcb'))
+// console.log(noCp('ab','abcbcb'))
+
+//comment
+
 
 
