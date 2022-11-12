@@ -462,5 +462,42 @@ function marble(a,b,n){
 
 // console.log(marble(1,2,2))
 
+function noun(str){
+    let lower = str.toLowerCase()
+    let upper = str[0].toUpperCase()
+    
+    let cap = upper + lower.slice(1)
+    return cap
+}
+
+// console.log(noun('pARis'))
+
+function noCp(a,b){
+    let count = 0
+    let mapB = new Map()
+    for (let i=0; i<b.length;i++){
+        mapB.get(b[i]) ?
+        mapB.set(b[i], mapB.get(b[i]) + 1): mapB.set(b[i], 1)
+    }
+    let mapA = new Map()
+    for (let i=0; i<a.length;i++){
+        mapA.get(a[i]) ?
+        mapA.set(a[i], mapA.get(a[i]) + 1): mapA.set(a[i], 1)
+    }
+    while (mapB.size > 0){
+        for (let i=0; i<a.length;i++){
+            if (mapB.get(a[i])){
+                mapB.set(a[i], mapB.get(a[i]) - 1)
+            }
+            if (mapB.get(a[i]) == 0){
+                mapB.clear()
+            }
+        }
+        count++
+    }
+    return count
+}
+
+console.log(noCp('ab','abcbcb'))
 
 
