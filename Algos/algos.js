@@ -500,7 +500,7 @@ function noCp(a,b){
 
 // console.log(noCp('ab','abcbcb'))
 
-//comment
+//comment, more coment
 
 
 
